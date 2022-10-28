@@ -1,4 +1,3 @@
 #!/bin/bash
-
-print("Hello World!")
-pwd
+ pwd
+ echo "Hello World!"
