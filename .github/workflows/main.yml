@@ -35,7 +35,7 @@ jobs:
   variable_job:
     env:
     - LOCAL_VAR: "Only variable_jobs can use this.."
-    - SECRET_TEXT: ${{secrets.SUPER_SECRET_TEXT}}
+   # - SECRET_TEXT: ${{secrets.SUPER_SECRET_TEXT}}
     runs-on: ubuntu-latest
     steps:
     - name: print global variable
@@ -43,4 +43,4 @@ jobs:
     - name: print local variable
       run: echo $LOCAL_VAR
     - name: print secret variable
-      run: echo $SECRET_TEXT
+      run: echo ${{secrets.SUPER_SECRET_TEXT}}
