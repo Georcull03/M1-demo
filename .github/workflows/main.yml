@@ -22,5 +22,6 @@ jobs:
       run: ls -al
     - name: Run a python script
       run: python script.py
-      
+    - name: Run a bash script
+      run: bashscript.sh
  
