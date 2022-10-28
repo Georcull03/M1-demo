@@ -1,0 +1,16 @@
+# a .gitignore file sits at the root of the projectand tells git what files to ignore when you run commands like 'git 
+
+
+# to ignore password.txt just add password.txt
+password.txt
+
+# to ignore all files ending in js
+*.js
+
+*.md
+
+#ignore all files ending in .md but will keep README.md
+!README.md
+
+# ignores everything in /secrets directory
+/secrets
