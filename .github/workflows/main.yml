@@ -14,13 +14,4 @@ jobs:
     - run: echo 'Job status is ${{job.status}}'
 
 
-  clone_demo:
-    runs-on: ubunut-latest
-    steps:
-    - name: Check out Repo
-      uses: actions/checkout@v3
-    - name: list contents of current directory
-      run: ls -al
-    - name: Run a python script
-      run: python script.py
-      
+ 
