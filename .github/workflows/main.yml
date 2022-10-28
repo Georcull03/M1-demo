@@ -1,6 +1,12 @@
 name: Git Actions Demo
 on: [push] # in what event does this workflow run
 
+
+#Global variables go before jobs
+env:
+  Global_VAR: "This is public"
+
+
 # What jobs are part of this workflow
 jobs:
   action_demo:
@@ -23,4 +29,18 @@ jobs:
     - name: Run a python script
       run: python script.py
       
- 
+# environment variable access or secret access keys
+# Storing private data as variables means they aren't public
+
+  variable_job:
+    env:
+    - LOCAL_VAR: "Only variable_jobs can use this.."
+    - SECRET_TEXT: ${{secrets.SUPER_SECRET_TEXT}}
+    runs-on: ubuntu-latest
+    steps:
+    - name: print global variable
+      run: echo $GLOBAL_VAR
+    - name: print local variable
+      run: echo $LOCAL_VAR
+    - name: print secret variable
+      run: echo $SECRET_TEXT
